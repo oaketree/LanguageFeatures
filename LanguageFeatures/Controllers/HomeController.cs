@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LanguageFeatures.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,9 +15,12 @@ namespace LanguageFeatures.Controllers
         {
             return "Navigate to a URL to show an example";
         }
-        public ActionResult Index()
+        public ViewResult AutoProperty()
         {
-            return View();
+            Product myProduct = new Product();
+            myProduct.Name = "Kayak";
+            string productName = myProduct.Name;
+            return View("Result",(object)string.Format("Product Name:{0}",productName));
         }
 
     }
