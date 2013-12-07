@@ -14,7 +14,7 @@ namespace LanguageFeatures.Models
             get
             { return ProductID + name; }
             set
-            { Name = value; }
+            { name = value; }
         }
         public string Description { get; set; }
         public decimal Price { get; set; }
