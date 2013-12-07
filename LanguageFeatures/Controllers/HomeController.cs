@@ -20,8 +20,20 @@ namespace LanguageFeatures.Controllers
             Product myProduct = new Product();
             myProduct.Name = "Kayak";
             string productName = myProduct.Name;
-            return View("Result",(object)string.Format("Product Name:{0}",productName));
+            return View("Result", (object)string.Format("Product Name:{0}", productName));
         }
-
+        public ViewResult CreateProduct()
+        {
+            // create and populate a new Product object
+            Product myProduct = new Product
+            {
+                ProductID = 100,
+                Name = "Kayak",
+                Description = "A boat for one person",
+                Price = 275M,
+                Category = "Watersports"
+            };
+            return View("Result", (object)String.Format("Category: {0}", myProduct.Category));
+        }
     }
 }
